@@ -1,0 +1,131 @@
+POST https://app.documenso.com/api/v2/envelope/create
+Accept: application/json
+Authorization: {{documenso_token}}
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="payload"
+Content-Type: application/json
+
+{
+    "type": "DOCUMENT",
+    "title": "Tcc envelope send test",
+    "meta": {
+      "subject": "TCC para assinatura - (Student name)",
+      "message": "Prezados, favor realizar a assinatura do Trabalho de Conclusão de Curso do aluno (Student name). \n Atenciosamente, Instituto de Ensino Superior da Grande Florianópolis.",
+      "dateFormat": "dd/MM/yyyy",
+      "distributionMethod": "EMAIL",
+      "signingOrder": "SEQUENTIAL",
+      "allowDictateNextSigner": false
+    },
+    "recipients": [
+      {
+        "email": "student@example.com",
+        "name": "Student",
+        "signingOrder": 0,
+        "role": "CC",
+        "fields": []
+      },
+      {
+        "email": "advisor@example.com",
+        "name": "Advisor",
+        "signingOrder": 1,
+        "role": "SIGNER",
+        "fields": [
+          {
+            "identifier": 0,
+            "type": "SIGNATURE",
+            "page": 3,
+            "positionX": 45,
+            "positionY": 61,
+            "width": 13,
+            "height": 3
+          }
+        ]
+      },
+      {
+        "email": "commitee_member+1@example.com",
+        "name": "Commitee Member One",
+        "signingOrder": 2,
+        "role": "SIGNER",
+        "fields": [
+          {
+            "identifier": 0,
+            "type": "SIGNATURE",
+            "page": 3,
+            "positionX": 45,
+            "positionY": 71,
+            "width": 13,
+            "height": 3
+          }
+        ]
+      },
+      {
+        "email": "commitee_member+2@example.com",
+        "name": "Commitee Member Two",
+        "signingOrder": 2,
+        "role": "SIGNER",
+        "fields": [
+          {
+            "identifier": 0,
+            "type": "SIGNATURE",
+            "page": 3,
+            "positionX": 45,
+            "positionY": 81,
+            "width": 13,
+            "height": 3
+          }
+        ]
+      },
+      {
+        "email": "commitee_member+3@example.com",
+        "name": "Commitee Member Three",
+        "signingOrder": 2,
+        "role": "SIGNER",
+        "fields": [
+          {
+            "identifier": 0,
+            "type": "SIGNATURE",
+            "page": 3,
+            "positionX": 45,
+            "positionY": 91,
+            "width": 13,
+            "height": 3
+          }
+        ]
+      }
+    ]
+  }
+
+--WebAppBoundary
+Content-Disposition: form-data; name="files"; filename="main.pdf"
+Content-Type: application/pdf
+
+< ../../../IdeaProjects/senior-thesis/out/main.pdf
+
+--WebAppBoundary--
+
+###
+
+GET https://app.documenso.com/api/v2/document?documentId=envelope_aimtiumbmxbzczsf
+Authorization: {{documenso_token}}
+
+###
+
+GET https://app.documenso.com/api/v2/envelope/envelope_xotxhkssnnxwrxok
+Authorization: {{documenso_token}}
+
+###
+
+GET https://app.documenso.com/api/v2/document?source=DOCUMENT&status=DRAFT&page=1&perPage=10
+Authorization: {{documenso_token}}
+
+###
+
+POST https://app.documenso.com/api/v2/envelope/distribute
+Authorization: {{documenso_token}}
+Content-Type: application/json
+
+{
+  "envelopeId": "envelope_eehxwrlmayilxvkn"
+}

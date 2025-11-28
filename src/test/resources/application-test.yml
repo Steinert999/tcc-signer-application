@@ -1,0 +1,10 @@
+---
+spring:
+  application:
+    name: "tcc-signer-api"
+  output:
+    ansi:
+      enabled: always
+logging:
+  level:
+    root: info

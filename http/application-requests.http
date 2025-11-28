@@ -1,0 +1,43 @@
+POST http://localhost:8080/document/send-sign
+Content-Type: multipart/form-data; boundary=boundary_string
+
+--boundary_string
+Content-Disposition: form-data; name="document"
+Content-Type: application/json
+
+{
+  "student": {
+    "name": "Guilherme Steinert de Azevedo",
+    "email": "steinert999@outlook.com"
+  },
+  "signers": [
+    {
+      "name": "Teste 1",
+      "email": "steinert999@outlook.com",
+      "type": "ADVISOR"
+    },
+    {
+      "name": "Teste 2",
+      "email": "steinert.az999@gmail.com",
+      "type": "COMMITTEE_MEMBER"
+    },
+    {
+      "name": "Teste 3",
+      "email": "steinert.az999@gmail.com",
+      "type": "COMMITTEE_MEMBER"
+    },
+    {
+      "name": "Teste 4",
+      "email": "steinert.az999@gmail.com",
+      "type": "COMMITTEE_MEMBER"
+    }
+  ]
+}
+
+--boundary_string
+Content-Disposition: form-data; name="pdf-file"; filename="document"
+Content-Type: application/pdf
+
+< ../../../IdeaProjects/senior-thesis/out/main.pdf
+
+--boundary_string--

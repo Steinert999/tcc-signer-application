@@ -1,0 +1,18 @@
+{
+  "frontendFolder": "C:/Users/stein/IdeaProjects/tcc-signer-api/./src/main/frontend",
+  "themeFolder": "themes",
+  "themeResourceFolder": "C:/Users/stein/IdeaProjects/tcc-signer-api/./src/main/frontend/generated/jar-resources",
+  "staticOutput": "C:/Users/stein/IdeaProjects/tcc-signer-api/target/classes/META-INF/VAADIN/webapp/VAADIN/static",
+  "generatedFolder": "generated",
+  "statsOutput": "C:\\Users\\stein\\IdeaProjects\\tcc-signer-api\\target\\classes\\META-INF\\VAADIN\\config",
+  "frontendBundleOutput": "C:\\Users\\stein\\IdeaProjects\\tcc-signer-api\\target\\classes\\META-INF\\VAADIN\\webapp",
+  "devBundleOutput": "C:/Users/stein/IdeaProjects/tcc-signer-api/target/dev-bundle/webapp",
+  "devBundleStatsOutput": "C:/Users/stein/IdeaProjects/tcc-signer-api/target/dev-bundle/config",
+  "i18nOutput": "target/classes/vaadin-i18n",
+  "jarResourcesFolder": "C:/Users/stein/IdeaProjects/tcc-signer-api/./src/main/frontend/generated/jar-resources",
+  "themeName": "",
+  "clientServiceWorkerSource": "C:\\Users\\stein\\IdeaProjects\\tcc-signer-api\\target\\sw.ts",
+  "pwaEnabled": false,
+  "offlineEnabled": false,
+  "offlinePath": "'offline.html'"
+}
