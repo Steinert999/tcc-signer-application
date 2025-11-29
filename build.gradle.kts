@@ -7,6 +7,11 @@ plugins {
     id("com.vaadin") version "24.9.5"
 }
 
+vaadin {
+    productionMode = true
+    optimizeBundle = false
+}
+
 group = "br.edu.ies"
 version = "0.0.1-SNAPSHOT"
 description = "tcc-signer-api"
@@ -38,7 +43,6 @@ extra["vaadinVersion"] = "24.9.5"
 
 dependencies {
 
-    implementation("com.vaadin:vaadin")
     implementation("com.vaadin:vaadin-spring-boot-starter")
     // Kotlin
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.25")
@@ -76,11 +80,6 @@ kotlin {
     }
 }
 
-tasks.register("buildProduction") {
-    group = "build"
-    description = "Build the application for production"
-    dependsOn("vaadinBuildFrontend", "bootJar")
-}
 
 tasks.withType<Test> {
     useJUnitPlatform()

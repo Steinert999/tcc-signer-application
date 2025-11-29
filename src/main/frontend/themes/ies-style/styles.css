@@ -31,19 +31,16 @@ main > vaadin-vertical-layout {
 .header {
     overflow: auto;
     display: grid;
-    grid-template-columns: 10vw fit-content(min(40%)) auto;
+    grid-template-columns: auto auto auto;
     grid-template-rows: auto;
-    flex-flow: row;
-    padding-left: 5vw;
     background-color: var(--lumo-primary-color);
     color: #f2f2f3;
-    font-size: var(--lumo-font-size-l);
 }
 
 .header div {
-    padding: 10px;
+    padding: min(0.5rem, 8%);
     content: url("images/logo-ies.png");
-    max-height: 10vh;
+    max-height: 10vw;
 }
 
 .header .action-buttons {
@@ -52,25 +49,26 @@ main > vaadin-vertical-layout {
     max-height: none;
 }
 
-.header vaadin-card {
-    background-color: inherit;
-    max-height: 10vh;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 1rem;
-    border-left: solid var(--lumo-warning-color);
-    border-radius: unset;
+.header .action-buttons > * {
+    font-size: 0.7vw;
+}
+
+.header vaadin-card::part(content) {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .header vaadin-card h1 {
     color: #f2f2f3;
     font-weight: bold;
-    font-size: var(--lumo-font-size-xl);
+    font-size: 1.5vw;
 }
 
 .header vaadin-card p {
     margin: unset;
-    font-size: var(--lumo-font-size-s);
+    font-size: 1vw;
 }
 
 .content-header {
@@ -82,13 +80,13 @@ main > vaadin-vertical-layout {
 
 .content-header h1 {
     justify-content: center;
-    font-size: var(--lumo-font-size-xxxl);
+    font-size: 2.5vw;
     color: var(--lumo-header-text-color);
 }
 
 .content-header h2 {
     font-weight: lighter;
-    font-size: var(--lumo-font-size-xl);
+    font-size: 1.5vw;
     color: var(--lumo-shade-50pct);
 }
 
@@ -122,36 +120,39 @@ main > vaadin-vertical-layout {
 }
 
 .content vaadin-upload > [slot="drop-label"] {
-    font-size: var(--lumo-font-size-xxs);
+    font-size: 0.8vw;
 }
 
 .content vaadin-upload > [slot="add-button"] {
+    font-size: 1.2vw;
     margin: 0;
     min-width: fit-content;
     background-color: var(--lumo-shade-10pct);
 }
 
 .content vaadin-card {
+    max-width: 80vw;
     background-color: inherit;
     border: solid 2px var(--lumo-shade-30pct);
 }
 
 .content > vaadin-card::part(content) {
+    border-radius: 5px;
     border: solid 1px var(--lumo-shade-20pct);
 }
 
 .committee-fields vaadin-card {
     border: none;
-    margin-bottom: 5px;
+    margin-bottom: 0.5vh;
 }
 
 .content vaadin-card vaadin-text-field {
-    margin: 10px;
+    margin: 0.5vw;
 }
 
 
 .content vaadin-card vaadin-email-field {
-    margin: 10px;
+    margin: 0.5vw;
 }
 
 .content vaadin-button {
@@ -160,14 +161,13 @@ main > vaadin-vertical-layout {
 }
 
 .content .warning-description {
-    margin-left: 17.5%;
-    margin-right: 17.5%;
-    max-width: 65%;
+    margin-left: 15%;
+    margin-right: 15%;
     border-radius: 4px;
 }
 
-.content .warning-description vaadin-icon {
-    font-size: 0.5rem;
+.content .warning-description {
+    font-size: 1vw;
 }
 
 .footer {
@@ -179,12 +179,13 @@ main > vaadin-vertical-layout {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 1vw;
 }
 
 .footer vaadin-icon {
     margin-right: 0.7vw;
     padding-bottom: 3px;
-    font-size: 0.6rem;
+    font-size: 0.8vw;
 }
 
 
