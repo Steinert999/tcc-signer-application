@@ -33,4 +33,4 @@ logging:
     root: info
 vaadin:
   allowed-packages: br/edu/ies/api/view
-  url-mapping: /submission/*
+  url-mapping: /*
